@@ -1,12 +1,4 @@
-import "../../../public/notification-bell-alarm.svg";
-import "../../../public/icon-avatar.png";
-import Main from "@/app/(main)/page";
-
-export default function Sidebar({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Sidebar() {
   return (
     <>
       <button
@@ -180,14 +172,6 @@ export default function Sidebar({
           </ul>
         </div>
       </aside>
-
-      <div className="p-4 bg-zinc-800 sm:ml-64 h-full flex flex-col justify-between">
-        {children}
-        <Main />
-        <div className="h-20 bg-sky-400"></div>
-        <div className="h-40 bg-neutral-400"></div>
-        <div className="h-20 bg-red-400"></div>
-      </div>
     </>
   );
 }

@@ -1,18 +1,17 @@
 import Post from "../components/post/post";
+import Sidebar from "../components/sidebar/sidebar";
 
-export default function Main() {
+export default function Main({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      <Post />
-      <h1>Nossa primeira pagina</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim tempora nemo suscipit. Sequi enim soluta laborum.
-        Amet cum vero est, accusantium ipsa hic, eaque vitae quasi et error ducimus. Accusantium! Lorem ipsum dolor sit
-        amet consectetur, adipisicing elit. Aperiam itaque et animi explicabo non nemo, officiis reiciendis consequatur
-        voluptates? Debitis quo labore, quod at ad beatae perferendis nihil eos iure. Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Et eius adipisci sed quis modi rem atque error dolores in tempora illum odio cum
-        harum doloremque aut, molestiae est asperiores! Deserunt?
-      </p>
-    </div>
+    <>
+      <Sidebar />
+
+      <div className="p-4 bg-zinc-800 sm:ml-64 h-full flex flex-col justify-between">
+        <Post />
+        <div className="h-20 bg-sky-400"></div>
+        <div className="h-40 bg-neutral-400"></div>
+        <div className="h-20 bg-red-400"></div>
+      </div>
+    </>
   );
 }
