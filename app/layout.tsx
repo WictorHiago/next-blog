@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Main from "./(main)/page";
+import NextAuthSessionProvider from "./providers/sessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="main h-dvh">
-          <Main children={children} />
-        </div>
+        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+        {/* <div className="main h-dvh"> */}
+        {/* <Main children={children} /> */}
+        {/* {children} */}
+        {/* </div> */}
       </body>
     </html>
   );
